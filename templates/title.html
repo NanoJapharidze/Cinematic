@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Watch Movie {% endblock %}
+{% block content %}
+
+<video src="{{ url }}" id="video_element" width="100%" height="100%" autoplay="autoplay"></video>
+
+<div style="background: white">
+    <a href="{{ url }}" class="btn btn-primary" style="color: whitesmoke; background-color: forestgreen; border-color: limegreen; margin-top: 10px; float: right">ფილმის გადმოწერა</a>
+    <h2 style="font-style: oblique; "> დატოვეთ კომენტარი: </h2>
+
+<form method="POST">
+
+    <div class="form-floating" >
+        <textarea name = "comment" placeholder="კომენტარი" id="floatingTextarea" class = "form-control"></textarea>
+          <label for="floatingTextarea">კომენტარი</label>
+    </div>
+{% if user.is_authenticated %}
+    <div align="center">
+        <button type = "submit" class = "btn btn-primary" style="margin-bottom: 30px; margin-top: 5px; background-color: limegreen; border-color: forestgreen" > კომენტარის დამატება </button>
+    </div>
+{% else %}
+    <h6 style="margin-top: 7px; margin-bottom: 7px">(კომენტარის დასატოვებლად გაიარეთ ავტორიზაცია)</h6>
+{% endif %}
+
+</form>
+    {% for each in comment %}
+    <div class="border border-success p-2 mb-2" style="margin-left: 20px;  margin-right: 20px">
+    <h6 style="font-weight: bold; color: limegreen"> {{each.username}} </h6>
+    <h6> {{each.text}} </h6>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

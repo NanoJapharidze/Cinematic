@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+    <div class="row" style="margin-top: 15px; margin-left: 125px">
+        {% for movie in movies %}
+            <div class="card" style="width: 18rem; padding-top: 15px; padding-left: 15px">
+  <img src="{{ url_for('static', filename= 'images/{}.png'.format(movie.title)) }}">
+  <div class="card-body" style="margin-top: 15px">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <p class="card-text"> ჟანრი: {{ movie.genre }}</p>
+    <p class="card-text"> წელი: {{ movie.year }}</p>
+    <p class="card-text"> IMDB: {{ movie.rating }}</p>
+      {% if movie.title.__len__() < 17 %}
+            </br>
+      {% endif %}
+    <a href="/{{ movie.title }}" class="btn btn-primary" style="color: whitesmoke; background-color: forestgreen; border-color: limegreen;">ფილმის ყურება</a>
+
+  </div>
+</div>
+        {% endfor %}
+    </div>
+    <a style="float: right; color: forestgreen" href="/" >დასაწყისში დაბრუნება</a>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %} Sign up {% endblock %}
+{% block content %}
+
+<img src="{{ url_for('static', filename= 'images/signup_background.jpg')}}" style="width:600px;float:left;margin-top:50px;padding-left: 10px;">
+
+    <form method="POST" style="width:25%; margin-left: 900px;">
+  <h3 style="margin-left: 70px; color: whitesmoke">რეგისტრაცია</h3>
+  <div class="form-group">
+    <label for="username" align="center" style="margin-top: 75px; color: whitesmoke">მომხმარებლის სახელი</label>
+    <input
+      type="text"
+      class="form-control"
+      id="username"
+      name="username"
+      placeholder="Enter username"
+      style="background-color: lightgrey; border-color: lightslategrey"
+    />
+  </div>
+        <div class="form-group">
+    <label for="email" style="color: whitesmoke">მეილი</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      style="background-color: lightgrey; border-color: lightslategrey"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="password1" style="color: whitesmoke">პაროლი</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password1"
+      name="password1"
+      placeholder="Enter password"
+      style="background-color: lightgrey; border-color: lightslategrey"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="password2" style="color: whitesmoke">პაროლის დადასტურება</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password2"
+      name="password2"
+      placeholder="Confirm password"
+      style="background-color: lightgrey; border-color: lightslategrey"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-success mt-3" style="margin-left: 110px">რეგისტრაცია</button>
+</form>
+
+{% endblock %}

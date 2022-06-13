@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} Log In {% endblock %}
+{% block content %}
+
+    <img src="{{ url_for('static', filename= 'images/login_background.png')}}" style="width:700px;float:left;margin-top:50px;padding-left: 10px;">
+
+    <form method="post" style="width:25%; margin-left: 900px;">
+        <h3 style="margin-left: 70px; color: whitesmoke">ავტორიზაცია</h3>
+        <label for="email" style="color: whitesmoke; margin-top: 150px" >მეილი</label>
+        <input type="text" name="email" id="email" class="form-control mb-3 mt-3" placeholder="email" style=" background-color: lightgrey; border-color: lightslategrey">
+        <label for="password" style="color: whitesmoke">პაროლი</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="password" style="background-color: lightgrey; border-color: lightslategrey">
+        <br />
+        <button type="submit" class="btn btn-success mt-3" style="color: whitesmoke; margin-left: 110px">ავტორიზაცია</button>
+    </form>
+{% endblock %}
